@@ -3,7 +3,7 @@ module ActionGrep; end
 class << ActionGrep
 
   def grep(action_name, file_name)
-    unless action_name =~ /\A([A-Z][A-Za-z\d]*)(?:#([A-Za-z]\w*))?\Z/ then
+    unless action_name =~ /\A([A-Z][A-Za-z\d]*)(?:::[A-Z][A-Za-z\d]*)*(?:#([A-Za-z]\w*))?\Z/ then
       raise ArgumentError, "Invalid action name #{action_name} expected something like SomeController#action"
     end
 
